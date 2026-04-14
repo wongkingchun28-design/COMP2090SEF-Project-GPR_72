@@ -1,0 +1,8 @@
+{
+    "Name": "User",
+    "Age": "20",
+    "Gender": "Male",
+    "Height": 175,
+    "AthletesStatus": false,
+    "HealthGoals": 500
+}
