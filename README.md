@@ -69,26 +69,46 @@ pip install PySide6 matplotlib fpdf2 opencv-python
    python GUI.py
    ```
    or click run GUI.py on your idle
+   
 ###2. After run the GUI.py you should see this page
+
 <img width="1081" height="1662" alt="螢幕擷取畫面 2026-04-16 012812" src="https://github.com/user-attachments/assets/35df15cc-5742-4489-b6cf-26955426dc9a" />
+
 ###3. You can click on any **Input** button, it will pop up a small window to ask you to input
+
 <img width="1077" height="1662" alt="螢幕擷取畫面 2026-04-16 012828" src="https://github.com/user-attachments/assets/a52b26ab-9c9f-4e1d-bbb7-9678753556b3" />
+
 ###4. For the Mental Wellbeing, there will be two type of question, choose one to answer
+
 <img width="539" height="163" alt="螢幕擷取畫面 2026-04-16 013046" src="https://github.com/user-attachments/assets/d5108407-a84e-4c41-a680-58f642821286" />
+
 ###5. The question will bee like this
+
 <img width="756" height="698" alt="螢幕擷取畫面 2026-04-16 013052" src="https://github.com/user-attachments/assets/088044fb-294e-4c73-9a97-fd87d676e478" />
+
 ###6. After answer all the question, it will show you the reesult
+
 <img width="744" height="308" alt="螢幕擷取畫面 2026-04-16 013103" src="https://github.com/user-attachments/assets/48d34311-c53d-4d98-9d40-c7c9caec5682" />
+
 ###7. For the **Daily Photo log**, it will show you the photo you input on the same day
+
 <img width="482" height="191" alt="螢幕擷取畫面 2026-04-16 015713" src="https://github.com/user-attachments/assets/dfc5e606-4942-46da-95b7-7ba3cdf590dd" />
+
 ###8. Click on **Trend**, you will see **Generate Play Photo Recap Video** button click on it you will see the video make of all of your photos
 ###9. Also on the **Trend Page**, there will be graph that show the trend of your data 
+
 <img width="1039" height="1560" alt="螢幕擷取畫面 2026-04-16 015729" src="https://github.com/user-attachments/assets/217228f9-de55-4b8c-b21a-cb84ab46be52" />
+
 ###10. You can scroll down on **Trend Page**, at the bottom you will see **Export Full Health Report (PDF)** click it and you can get your data in pdf format
+
 <img width="1063" height="1645" alt="螢幕擷取畫面 2026-04-16 015742" src="https://github.com/user-attachments/assets/a682d1c2-628f-4747-917b-6231bd41ae35" />
+
 ###11. On **User Page**, it will list your personal data
+
 <img width="1064" height="1638" alt="螢幕擷取畫面 2026-04-16 015802" src="https://github.com/user-attachments/assets/24766d48-5e4e-4725-8173-7e5529e0304d" />
+
 ###12. You can edit all the data and it will refresh the data immediately
+
 <img width="1054" height="1636" alt="螢幕擷取畫面 2026-04-16 015813" src="https://github.com/user-attachments/assets/dc54f4fe-a9b9-4e00-b3cd-a572256cdf41" />
 
 
