@@ -135,6 +135,12 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 * **Exercise Dataset**: [Calories Burned During Exercise and Activities](https://www.kaggle.com/datasets/aadhavvignesh/calories-burned-during-exercise-and-activities) 
     * **Author**: Vignesh, A. (2023)
     * **License**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+---
+
+### Clinical Assessment Tools
+
+* **Depression Severity (PHQ-9)**: Referenced from the [Patient Health Questionnaire-9](https://www.mdcalc.com/calc/1725/phq9-patient-health-questionnaire9).
+* **Anxiety Screening (GAD-7)**: Referenced from the [General Anxiety Disorder-7](https://www.mdcalc.com/calc/1727/gad7-general-anxiety-disorder7).
 
 ---
 ## ⚖️ Disclaimer
