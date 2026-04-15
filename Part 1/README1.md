@@ -1,10 +1,10 @@
 
 # COMP2090SEF-Project-GPR_72
-## 🏥 Healthcare Tracking System
+## Task 1: Healthcare Tracking System
 
 A comprehensive desktop application designed to monitor, analyze, and visualize personal health data. Built with Python and PySide6, this system provides a centralized hub for tracking everything from vital signs and physical activity to mental well-being and hydration.
 
-## 🚀 Features
+## Features
 
 ### 1. **Interactive Dashboard**
 - **Dynamic Visualizations:** Includes "beating" heart rate animations, progress rings for calories and hydration, and categorized bar charts.
@@ -30,7 +30,7 @@ A comprehensive desktop application designed to monitor, analyze, and visualize 
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -45,7 +45,7 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 - **`GUI.py`**: The main entry point. Handles the UI logic, page switching, and user interactions.
 - **`Base.py`**: Manages user profiles (Name, Age, Gender, Goals) and JSON persistence.
@@ -66,7 +66,7 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 
 ---
 
-## 🖥️ Usage
+## Usage
 
 ### 1. **Run the Application:**
    ```bash
@@ -123,7 +123,7 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 
 ---
 
-## 📊 Data Storage
+## Data Storage
 - **`user_profile.json`**: Stores basic user metrics.
 - **`user_health_data.csv`**: A pipe-delimited log of every entry made in the system, categorized by date and time.
 - **`/photos`**: Directory where uploaded progress images are stored.
@@ -143,7 +143,7 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 * **Anxiety Screening (GAD-7)**: Referenced from the [General Anxiety Disorder-7](https://www.mdcalc.com/calc/1727/gad7-general-anxiety-disorder7).
 
 ---
-## ⚖️ Disclaimer
+## Disclaimer
 *This system is intended for personal tracking and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a physician or other qualified health provider with any questions regarding a medical condition.*
 
 ---
