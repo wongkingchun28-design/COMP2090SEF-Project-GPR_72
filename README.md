@@ -1,3 +1,4 @@
+
 # COMP2090SEF-Project-GPR_72
 ## 🏥 Healthcare Tracking System
 
@@ -72,7 +73,17 @@ pip install PySide6 matplotlib fpdf2 opencv-python
 4. **View Trends:** Go to the **Trend** tab to see visual graphs of your progress over time.
 5. **Generate Report:** In the **Trend** tab, click "Export Full Health Report" to save a PDF of your history.
 6. **Photo Recap:** Upload photos in the "Daily Photo Log" and click "Generate & Play Video" to see your journey.
+<img width="1077" height="1662" alt="螢幕擷取畫面 2026-04-16 012828" src="https://github.com/user-attachments/assets/a52b26ab-9c9f-4e1d-bbb7-9678753556b3" />
+<img width="1054" height="1636" alt="螢幕擷取畫面 2026-04-16 015813" src="https://github.com/user-attachments/assets/dc54f4fe-a9b9-4e00-b3cd-a572256cdf41" />
+<img width="1064" height="1638" alt="螢幕擷取畫面 2026-04-16 015802" src="https://github.com/user-attachments/assets/24766d48-5e4e-4725-8173-7e5529e0304d" />
+<img width="1063" height="1645" alt="螢幕擷取畫面 2026-04-16 015742" src="https://github.com/user-attachments/assets/a682d1c2-628f-4747-917b-6231bd41ae35" />
+<img width="1039" height="1560" alt="螢幕擷取畫面 2026-04-16 015729" src="https://github.com/user-attachments/assets/217228f9-de55-4b8c-b21a-cb84ab46be52" />
+<img width="482" height="191" alt="螢幕擷取畫面 2026-04-16 015713" src="https://github.com/user-attachments/assets/dfc5e606-4942-46da-95b7-7ba3cdf590dd" />
+<img width="744" height="308" alt="螢幕擷取畫面 2026-04-16 013103" src="https://github.com/user-attachments/assets/48d34311-c53d-4d98-9d40-c7c9caec5682" />
+<img width="756" height="698" alt="螢幕擷取畫面 2026-04-16 013052" src="https://github.com/user-attachments/assets/088044fb-294e-4c73-9a97-fd87d676e478" />
+<img width="539" height="163" alt="螢幕擷取畫面 2026-04-16 013046" src="https://github.com/user-attachments/assets/d5108407-a84e-4c41-a680-58f642821286" />
 
+<img width="1081" height="1662" alt="螢幕擷取畫面 2026-04-16 012812" src="https://github.com/user-attachments/assets/35df15cc-5742-4489-b6cf-26955426dc9a" />
 ---
 
 ## 📊 Data Storage
