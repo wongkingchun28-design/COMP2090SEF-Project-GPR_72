@@ -48,9 +48,14 @@ The following external resources and references were utilized during development
 
 * **Data & Logic**: Exercise and calorie calculation logic inspired by the Calories Burned dataset.
 * **Assessment Tools**: Clinical assessment frameworks referenced from PHQ-9 and GAD-7 standards.
-* **Visual Assets**: UI illustrations provided by various open-source contributors.
 * **Subject Matter**: Health and heart rate measurement guidelines sourced from established fitness and medical references.
 
 ---
+## License and Attribution
+
+This project utilizes PySide6, which is licensed under the GNU Lesser General Public License (LGPL) v3.
+Disclaimer: PySide6 is a copyrighted asset developed and owned by The Qt Company.
+Source Code: The source code for PySide6 can be obtained from the official Qt website.
+Compliance: This project interacts with PySide6 via dynamic linking. No modifications have been made to the PySide6 source code itself.
 
 
