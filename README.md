@@ -39,7 +39,7 @@ The project is organized into the following directory structure to ensure clarit
 ##  Project Demonstrations
 
 * **Part 1 Introduction Video**: https://youtu.be/FzqPF14W_MA
-* **Part 2 Introduction Video**: 
+* **Part 2 Introduction Video**: https://youtu.be/nBCXUKiTh5U
 
 ---
 
