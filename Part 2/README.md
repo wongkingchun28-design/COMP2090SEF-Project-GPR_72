@@ -43,9 +43,16 @@ While Kruskal's is traditionally used for finding a Minimum Spanning Tree (MST),
 2.  Execute the main entry point: `python main.py`.
 3.  **Controls**:
     * Use **W, A, S, D** to navigate the blue player square.
-    * **Objective**: Reach the red exit square. Upon success, the DSU logic will trigger and generate a fresh maze instantly.
+    * **Objective**: Reach the red exit square. 
 
-<img width="2875" height="1647" alt="螢幕擷取畫面 2026-04-16 030225" src="https://github.com/user-attachments/assets/d3f254c9-a65b-4b06-ae30-2b5ff9cc8533" />
+<img width="2876" height="1654" alt="螢幕擷取畫面 2026-04-16 191158" src="https://github.com/user-attachments/assets/24626876-313e-4059-91d2-85ad9b62faaa" />
+
+4. Click on **Search road**:
+   * It will show the only path in yellow that can reach the red exit square form the green start square
+   
+<img width="2885" height="1650" alt="螢幕擷取畫面 2026-04-16 191219" src="https://github.com/user-attachments/assets/4e25d49f-4d04-4c1a-b595-43f8e80d384d" />
+
+5. Once the blue player square reach the red exit square. Upon success, the DSU logic will trigger and generate a fresh maze instantly.
 
 ---
 
