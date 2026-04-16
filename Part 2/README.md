@@ -49,12 +49,20 @@ While Kruskal's is traditionally used for finding a Minimum Spanning Tree (MST),
 
 4. Click on **Search road**:
    * It will show the only path in yellow that can reach the red exit square form the green start square
+   * Yellow Path: The current path being explored.
+   * Dark Gray: Dead ends identified by the DFS algorithm.
    
 <img width="2885" height="1650" alt="螢幕擷取畫面 2026-04-16 191219" src="https://github.com/user-attachments/assets/4e25d49f-4d04-4c1a-b595-43f8e80d384d" />
 
 5. Once the blue player square reach the red exit square. Upon success, the DSU logic will trigger and generate a fresh maze instantly.
 
 ---
+## 5. Modular Structure
+The project is divided into three modules to follow modular programming principles:
+   * `main.py`: Handles the GUI, rendering, and user input.
+   * `maze.py`: Contains the DSU class and the Kruskal's maze generation logic.
+   * `search.py`: Implements the pathfinding generator for non-blocking visualization.
 
-## 5. References
+---
+## 6. References
 * **Maze Generation Theory**: Randomized Kruskal's Algorithm.
