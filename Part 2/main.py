@@ -5,7 +5,7 @@ import time
 from search import search_road
 
 pygame.init()
-screen = pygame.display.set_mode((1920, 1080))
+screen = pygame.display.set_mode((1920, 1080))      
 clock = pygame.time.Clock()
 
 width, height = 89, 49 
@@ -20,7 +20,7 @@ COLOR_START = "green"
 COLOR_END = "red"
 COLOR_PLAYER = "blue"
 
-def Reset():
+def Reset():            #Reset the maze and player position, return MazeData, Start, End, player_pos
     global MazeData, Start, End, player_pos, searching, search_completed, current_search_path, current_dead_ends
     searching = False
     search_completed = False
@@ -61,7 +61,7 @@ running = True
 last_move_time = 0
 move_delay = 0.05
 
-while running:
+while running:          #Main game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT: running = False
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -69,7 +69,7 @@ while running:
                 searching = True
                 search_gen = search_road(MazeData, Start, End)
 
-    if searching and search_gen:
+    if searching and search_gen:        #Advance the search algorithm by a few steps each frame, update current_search_path and current_dead_ends, set searching to False when search is complete
         try:
             for _ in range(5): 
                 path, dead, found = next(search_gen)
@@ -86,7 +86,7 @@ while running:
 
 
     current_time = time.time()
-    if not searching and current_time - last_move_time > move_delay:
+    if not searching and current_time - last_move_time > move_delay:        #Handle player movement, only allow moving to adjacent path cells that are not in current_dead_ends unless they are also in current_search_path, update last_move_time when player moves
         keys = pygame.key.get_pressed()
         nx, ny = player_pos
         moved = False
@@ -113,13 +113,13 @@ while running:
 
     screen.fill("gray")
 
-    for (x,y), value in MazeData.items():
+    for (x,y), value in MazeData.items():   #Draw the maze, color cells based on their state in the search algorithm, also draw the start and end points
         rect = pygame.Rect(OFFSET_X + x * CellSize, OFFSET_Y + y * CellSize, CellSize, CellSize)
         
 
         color = COLOR_WALL if value == 1 else COLOR_UNSEARCHED
 
-        if (x, y) in current_dead_ends:
+        if (x, y) in current_dead_ends:     
             color = COLOR_DEAD_END
         
         if (x, y) in current_search_path:
