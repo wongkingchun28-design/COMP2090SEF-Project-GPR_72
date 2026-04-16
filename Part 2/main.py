@@ -2,88 +2,145 @@ import pygame
 from maze import CreateMaze
 import random
 import time
+from search import search_road
 
-pygame.display.init()
-screen = pygame.display.set_mode((1920,1080))
+pygame.init()
+screen = pygame.display.set_mode((1920, 1080))
 clock = pygame.time.Clock()
-running = True
-width = 89
-height = 49 
+
+width, height = 89, 49 
 CellSize = 20
-dt = 0
-move_delay = 0.1  
-last_move_time = 0
+OFFSET_X, OFFSET_Y = 70, 50
+
+COLOR_WALL = (0, 0, 0)             
+COLOR_UNSEARCHED = (255, 255, 255) 
+COLOR_DEAD_END = (60, 60, 60)      
+COLOR_PATH = "yellow"             
+COLOR_START = "green"
+COLOR_END = "red"
+COLOR_PLAYER = "blue"
+
 def Reset():
-    MazeData = CreateMaze(width,height)
-    Path =[pos for pos, val in MazeData.items() if val == 0]
-    Edge = [ (x, y) for (x, y), val in MazeData.items() if val == 1 and (x == 0 or x == width - 1 or y == 0 or y == height - 1)]
-    PathNextToEdge = []
-    for (ex,ey) in Edge:
-        neighbors = [(ex+1, ey), (ex-1, ey), (ex, ey+1), (ex, ey-1)]
-        for nx, ny in neighbors:
-            if (nx, ny) in Path and (nx, ny) not in Edge:
-                PathNextToEdge.append((ex, ey))
-    Start, End = random.sample(PathNextToEdge, 2)
+    global MazeData, Start, End, player_pos, searching, search_completed, current_search_path, current_dead_ends
+    searching = False
+    search_completed = False
+    current_search_path = []
+    current_dead_ends = set()
+
+    MazeData = CreateMaze(width, height)
+    
+    PathNodes = [pos for pos, val in MazeData.items() if val == 0]
+    EdgeWalls = [(x, y) for (x, y), val in MazeData.items() 
+                if (x == 0 or x == width-1 or y == 0 or y == height-1)]
+    
+    PossibleExits = []
+    for (ex, ey) in EdgeWalls:
+        for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+            if (ex+dx, ey+dy) in PathNodes:
+                PossibleExits.append((ex, ey))
+                break
+    
+    Start, End = random.sample(PossibleExits, 2)
     MazeData[Start] = 0
     MazeData[End] = 0
+    
     player_pos = list(Start)
     return MazeData, Start, End, player_pos
 
 MazeData, Start, End, player_pos = Reset()
 
+searching = False
+search_completed = False
+search_gen = None
+current_search_path = []
+current_dead_ends = set()
+
+button_rect = pygame.Rect(10, 10, 160, 40)
+font = pygame.font.SysFont("Microsoft JhengHei", 20)
+running = True
+last_move_time = 0
+move_delay = 0.05
 
 while running:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+        if event.type == pygame.QUIT: running = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if button_rect.collidepoint(event.pos) and not searching and not search_completed:
+                searching = True
+                search_gen = search_road(MazeData, Start, End)
+
+    if searching and search_gen:
+        try:
+            for _ in range(5): 
+                path, dead, found = next(search_gen)
+                current_search_path, current_dead_ends = path, dead
+                if found:
+                    searching = False
+                    search_completed = True
+                    
+                    for pos, val in MazeData.items():
+                        if val == 0 and pos not in current_search_path:
+                            current_dead_ends.add(pos)
+                    break
+        except StopIteration: searching = False
+
 
     current_time = time.time()
-    if current_time - last_move_time > move_delay:
+    if not searching and current_time - last_move_time > move_delay:
         keys = pygame.key.get_pressed()
-        
-        new_x, new_y = player_pos[0], player_pos[1]
+        nx, ny = player_pos
         moved = False
-
-        if keys[pygame.K_w]: 
-            new_y -= 1; moved = True
-        elif keys[pygame.K_s]: 
-            new_y += 1; moved = True
-        elif keys[pygame.K_a]: 
-            new_x -= 1; moved = True
-        elif keys[pygame.K_d]: 
-            new_x += 1; moved = True
-
+        if keys[pygame.K_w]: ny -= 1; moved = True
+        elif keys[pygame.K_s]: ny += 1; moved = True
+        elif keys[pygame.K_a]: nx -= 1; moved = True
+        elif keys[pygame.K_d]: nx += 1; moved = True
+        
         if moved:
-            if MazeData.get((new_x, new_y)) == 0:
-                player_pos = [new_x, new_y]
+            target = (nx, ny)
+            cur = tuple(player_pos)
+            can_move = False
+            
+            if MazeData.get(target) == 0:
+                if cur in current_search_path:
+                    if target in current_search_path: can_move = True
+                elif cur in current_dead_ends:
+                    if target in current_dead_ends or target in current_search_path: can_move = True
+                else:
+                    can_move = True
+            
+            if can_move: player_pos = [nx, ny]
             last_move_time = current_time
-
 
     screen.fill("gray")
 
     for (x,y), value in MazeData.items():
-        rect = pygame.Rect(70+(x * CellSize), 50+ (y* CellSize), CellSize, CellSize)
+        rect = pygame.Rect(OFFSET_X + x * CellSize, OFFSET_Y + y * CellSize, CellSize, CellSize)
+        
 
-        if value == 0:
-            color = ("white")
-        else :
-            color = ("black")
+        color = COLOR_WALL if value == 1 else COLOR_UNSEARCHED
 
-        if (x,y) == Start:
-            color = ("green")
-        elif (x,y) == End:
-            color = ("red")
-    
+        if (x, y) in current_dead_ends:
+            color = COLOR_DEAD_END
+        
+        if (x, y) in current_search_path:
+            color = COLOR_PATH
+
+        if (x,y) == Start: color = COLOR_START
+        elif (x,y) == End: color = COLOR_END
+        
         pygame.draw.rect(screen, color, rect)
     
-    player_rect = pygame.Rect(70 + (player_pos[0] * CellSize), 50 + (player_pos[1] * CellSize), CellSize, CellSize)
-    pygame.draw.rect(screen, "blue", player_rect)
+
+    pygame.draw.rect(screen, COLOR_PLAYER, (OFFSET_X + player_pos[0] * CellSize, OFFSET_Y + player_pos[1] * CellSize, CellSize, CellSize))
+
+    if not searching and not search_completed:
+        pygame.draw.rect(screen, (100,100,100), button_rect)
+        screen.blit(font.render("Search Road", True, "white"), (button_rect.x+40, button_rect.y+8))
 
     if tuple(player_pos) == End:
-        MazeData, Start, End, player_pos = Reset()
-        last_move_time = time.time()
+        Reset()
 
     pygame.display.flip()
-    dt = clock.tick(60) / 1000
+    clock.tick(120)
 
 pygame.quit()
