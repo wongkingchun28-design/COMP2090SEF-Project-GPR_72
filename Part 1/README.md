@@ -10,7 +10,7 @@ A comprehensive desktop application designed to monitor, analyze, and visualize 
 - **Dynamic Visualizations:** Includes "beating" heart rate animations, progress rings for calories and hydration, and categorized bar charts.
 - **Categorized Tracking:**
     - **Vitals:** Heart Rate (BPM) and Blood Pressure (mmHg).
-    - **Physical:** Body Composition (BMI), Physical Activity (METs/Kcal), and Hydration.
+    - **Physical:** BMI, Physical Activity (METs/Kcal), and Hydration.
     - **Lifestyle:** Sleep Quality (Time Range), Dietary Intake, and Medication logs.
     - **Diagnostics:** Digestive Health (Urine color & Stool type based on the Bristol Scale).
 
