@@ -1044,7 +1044,7 @@ class HomePage(QWidget):    #Home page
             self.window().save_to_csv("Mental Wellbeing", save_value)
             
             QMessageBox.information(self, f"{type_label} Result", display_text)
-
+        self.refresh_ui()
 class TrendPage(QWidget):       #graph page
     def __init__(self, parent=None):
         super().__init__(parent)
