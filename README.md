@@ -29,6 +29,7 @@ The project is organized into the following directory structure to ensure clarit
 ├── Part 2/                  # Task 2: Self-study on Data Structures & Algorithms
 │   ├── main.py              # Maze game entry point and Pygame loop      <------ main.py
 │   ├── maze.py              # DSU implementation and Kruskal's algorithm
+|   ├── search.py            # DFS algorithm
 │   └── README.md            # Detailed documentation for Task 2      <----- README for task 2
 │
 └── README.md                # Main project navigation and overview
